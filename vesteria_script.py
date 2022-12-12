@@ -3,7 +3,7 @@
 import keyboard
 import mouse
 import time
-import sys
+import pyautogui
 
 recording = False
 
@@ -15,29 +15,25 @@ def main():
     # keyboard.press_and_release('TAB')
     while True:
         script()
+        time.sleep(20)
             
 def script():
     hit_shell()
     move_right(1.2)
     move_forward(0.25)
     hit_shell()
-    move_right(1.33)
-    move_forward(0.3)
+    move_right(1.3)
+    move_forward(0.03)
     hit_shell()
-    move_left(0.5)
-    move_back(1.4)
+    move_left(0.45)
+    move_back(1.352)
     hit_shell()
-    move_forward(0.2)
-    move_left(1.45)
+    move_forward(0.21)
+    move_left(1.43)
     hit_shell()
-    move_left(0.53)
-    move_forward(0.85)
-    # keyboard.press_and_release('caz')
-    # mouse.move(100, 100, absolute=False, duration=0.2)
-    # mouse.move(-100, -100, absolute=False, duration=0.2)
-    # mouse.click('left')
-    # mouse.move(200, 100, absolute=False, duration=0.2)
-    # mouse.click('left')
+    move_left(0.5055)
+    move_forward(0.8529)
+    # move_to_new_server()
 
 def turn_90_left():
     keyboard.press('left arrow')
@@ -71,12 +67,22 @@ def move_right(move_time):
     
 def hit_shell():
     mouse.press('left')
-    time.sleep(1)
+    time.sleep(20)
     mouse.release('left')
     keyboard.press_and_release('c')
-
+    
+def move_to_new_server():
+    keyboard.press_and_release('z')
+    mouse.move(290, -200, absolute=False, duration=0.1)
+    mouse.click('left')
+    mouse.drag(0, 0, 0, 500, absolute=False, duration=0.1)
+    time.wait(1)
+    mouse.move(200, 84, absolute=False, duration=1)
+    mouse.move(20, 0, absolute=False, duration=0.1)
+    mouse.move(-40, 0, absolute=False, duration=0.1)
+    mouse.move(20, 0, absolute=False, duration=0.1)
+    mouse.move(-20, 0, absolute=False, duration=0.1)
+    mouse.click('left')
 # keyboard.add_hotkey(37, print, args=('left arrow was pressed'))
 
 main()
-# time.sleep(3)
-# turn_90_left()
